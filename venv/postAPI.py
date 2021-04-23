@@ -3,10 +3,20 @@ import json
 import configparser
 from payLoad import *
 from utilities.configuration import *
+from utilities.resources import *
 
 
 loginapi_response = requests.post('https://report-staging.aiquire.com/api/auth/login/',json =loginAPI(),
     headers = {"Content-Type":"application/json"},)
+
+# url = getConfig()['API']['endpoint'] + apiResources.login
+#
+# loginapi_response = requests.post(url,
+#                                   json =loginAPI(),
+#                                   headers ={"Content-Type":"application/json"})
+
+
+
 print("API Response")
 print(loginapi_response.json())
 print("Status Code for the given API is :")
@@ -25,8 +35,6 @@ print("***************************************************************")
 
 response = requests.get('https://report-staging.aiquire.com/api/api/clients/',
                         headers = {'authorization': "Token f0b3ff6d5da1431c3ba92dc690174a3183567490", 'Content-Type': 'application/json'}, )
-
-
 #print(response.text)
 # print(type(response.text))
 #need to know how to capture the Key from previous file to here
