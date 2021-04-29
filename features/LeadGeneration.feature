@@ -1,6 +1,6 @@
 # Author : Aditi Mantri
 
-  Feature: Lead Generation end to end API
+  Feature: Lead Generation end to end API with lowest cost
 
     @smoke
     Scenario Outline: Step 1 - Login
